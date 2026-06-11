@@ -88,8 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 3. Process 영역 Swiper 설정 (여러 개의 스와이퍼를 각각 독립적으로 실행)
   const processSwipers = document.querySelectorAll(".process-swiper");
+  const delays = [2000, 2300, 2800];
 
-  processSwipers.forEach(function (swiperElement) {
+  processSwipers.forEach(function (swiperElement, index) {
     new Swiper(swiperElement, {
       effect: "slide",
       loop: true,
@@ -98,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       spaceBetween: 20,
       speed: 600,
       autoplay: {
-        delay: 2500,
+        delay: delays[index],
         disableOnInteraction: false,
       },
       breakpoints: {

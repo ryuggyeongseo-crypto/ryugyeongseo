@@ -1,506 +1,451 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>비디오 에디터 포트폴리오</title>
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <!-- 외부 CSS 파일 연결 -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="logo">PORTFOLIO</div>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Project</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#playground">Playground</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>비디오 에디터 포트폴리오</title>
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <!-- 외부 CSS 파일 연결 -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">PORTFOLIO</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Project</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#playground">Playground</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- Hero -->
-    <section class="hero fade-up">
-      <div class="hero-slider">
-        <div class="hero-track">
-          <div class="hero-slide">
-            <div class="hero-text">
-              <!-- <h2>작품 썸네일 파노라마</h2> -->
-              <p>
-                브랜드의 가치와 메시지를 효과적으로 전달하기 위해<br />편집,
-                모션, 디자인을 활용한 영상 콘텐츠를 제작합니다.
-              </p>
+        <!-- Hero -->
+        <section class="hero fade-up">
+            <div class="hero-slider">
+                <div class="hero-track">
+                    <div class="hero-slide" style="background-image: url(images/visual_1.png)">
+                        <div class="hero-text">
+                            <!-- <h2>작품 썸네일 파노라마</h2> -->
+                            <p>
+                                브랜드의 가치와 메시지를 효과적으로 전달하기 위해<br />편집, 모션, 디자인을 활용한 영상
+                                콘텐츠를 제작합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hero-slide">
+                        <div class="hero-text">
+                            <!-- <h2>작품 썸네일 파노라마 02</h2> -->
+                            <p>
+                                스토리텔링과 감각적인 연출을 결합하여<br />시청자의 기억에 오래 남는 비주얼을
+                                설계합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hero-slide">
+                        <div class="hero-text">
+                            <!-- <h2>작품 썸네일 파노라마 03</h2> -->
+                            <p>
+                                기획부터 최종 컷 편집, 사운드 믹싱까지<br />원스톱 프로세스로 완성도 높은 영상을
+                                만듭니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="hero-slide">
-            <div class="hero-text">
-              <!-- <h2>작품 썸네일 파노라마 02</h2> -->
-              <p>
-                스토리텔링과 감각적인 연출을 결합하여<br />시청자의 기억에 오래
-                남는 비주얼을 설계합니다.
-              </p>
+
+            <div class="hero-nav">
+                <div class="hero-btn prev-btn"></div>
+                <div class="hero-btn next-btn"></div>
             </div>
-          </div>
-          <div class="hero-slide">
-            <div class="hero-text">
-              <!-- <h2>작품 썸네일 파노라마 03</h2> -->
-              <p>
-                기획부터 최종 컷 편집, 사운드 믹싱까지<br />원스톱 프로세스로
-                완성도 높은 영상을 만듭니다.
-              </p>
+
+            <div class="hero-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
             </div>
-          </div>
-        </div>
-      </div>
+        </section>
 
-      <div class="hero-nav">
-        <div class="hero-btn prev-btn"></div>
-        <div class="hero-btn next-btn"></div>
-      </div>
-
-      <div class="hero-indicators">
-        <span class="indicator active"></span>
-        <span class="indicator"></span>
-        <span class="indicator"></span>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="about-section fade-up">
-      <div class="profile-area">
-        <!-- 프로필 이미지 영역 -->
-        <div class="profile-img-placeholder">
-          <img src="images/profile.png" alt="프로필 아바타" />
-        </div>
-        <h1>RYUGYEONGSEO</h1>
-        <p>Video Editor</p>
-      </div>
-      <div class="about-content">
-        <div class="about-item">
-          <h3>소개</h3>
-          <p>
-            <strong>아이디어를 이야기로, 이야기를 영상으로</strong><br />
-            기획부터 편집까지 콘텐츠가 전달되는 과정을 설계합니다.
-          </p>
-        </div>
-        <div class="about-item">
-          <h3>연출 스타일</h3>
-          <p>
-            <strong>보여주는 것보다 이해시키는 연출</strong><br />
-            장면과 정보를 연결해 자연스럽게 몰입되는 흐름을 만듭니다.
-          </p>
-        </div>
-        <div class="about-item">
-          <h3>작업 철학</h3>
-          <p>
-            <strong>좋은 영상은 효과가 아닌 맥락에서 시작됩니다.</strong><br />
-            모든 장면과 움직임에 이유를 담아 메시지가 명확하게 전달되는 콘텐츠를
-            만듭니다.
-          </p>
-        </div>
-        <div class="tools-section">
-          <h3>TOOLS</h3>
-          <div class="tools-grid">
-            <div>
-              <p class="tool-subtitle">MAIN</p>
-              <div class="tool-icons">
-                <div class="tool-icon">Ps</div>
-                <div class="tool-icon">Ae</div>
-                <div class="tool-icon">Pr</div>
-                <div class="tool-icon">Ai</div>
-              </div>
+        <!-- About -->
+        <section id="about" class="about-section fade-up">
+            <div class="profile-area">
+                <!-- 프로필 이미지 영역 -->
+                <div class="profile-img-placeholder">
+                    <img src="" alt="프로필 사진 첨부" />
+                </div>
+                <h1>RYUGYEONGSEO</h1>
             </div>
-            <div>
-              <p class="tool-subtitle">SUB</p>
-              <div class="sub-tools">
-                <span
-                  ><img src="images/ai tools.png" alt="AI" class="sub-icon" />
-                  AI TOOLS</span
-                >
-                <span
-                  ><img src="images/html.png" alt="HTML" class="sub-icon" />
-                  HTML</span
-                >
-                <span
-                  ><img
-                    src="images/blender.png"
-                    alt="BLENDER"
-                    class="sub-icon"
-                  />
-                  BLENDER</span
-                >
-                <span style="transform: translateX(2px)"
-                  ><img
-                    src="images/css.png"
-                    alt="CSS"
-                    class="sub-icon"
-                    style="width: 11px; height: 11px"
-                  />
-                  CSS</span
-                >
+            <div class="about-content">
+                <div class="about-item">
+                    <h3>소개</h3>
+                    <p>
+                        <strong>아이디어를 이야기로, 이야기를 영상으로</strong><br />
+                        기획부터 편집까지 콘텐츠가 전달되는 과정을 설계합니다.
+                    </p>
+                </div>
+                <div class="about-item">
+                    <h3>연출 스타일</h3>
+                    <p>
+                        <strong>보여주는 것보다 이해시키는 연출</strong><br />
+                        장면과 정보를 연결해 자연스럽게 몰입되는 흐름을 만듭니다.
+                    </p>
+                </div>
+                <div class="about-item">
+                    <h3>작업 철학</h3>
+                    <p>
+                        <strong>좋은 영상은 효과가 아닌 맥락에서 시작됩니다.</strong><br />
+                        모든 장면과 움직임에 이유를 담아 메시지가 명확하게 전달되는 콘텐츠를 만듭니다.
+                    </p>
+                </div>
+                <div class="tools-section">
+                    <h3>TOOLS</h3>
+                    <div class="tools-grid">
+                        <div>
+                            <p class="tool-subtitle">MAIN</p>
+                            <div class="tool-icons">
+                                <div class="tool-icon">Ps</div>
+                                <div class="tool-icon">Ae</div>
+                                <div class="tool-icon">Pr</div>
+                                <div class="tool-icon">Ai</div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="tool-subtitle">SUB</p>
+                            <div class="sub-tools">
+                                <span><img src="images/ai tools.png" alt="AI" class="sub-icon" /> AI TOOLS</span>
+                                <span><img src="images/html.png" alt="HTML" class="sub-icon" /> HTML</span>
+                                <span><img src="images/blender.png" alt="BLENDER" class="sub-icon" /> BLENDER</span>
+                                <span style="transform: translateX(2px)"
+                                    ><img
+                                        src="images/css.png"
+                                        alt="CSS"
+                                        class="sub-icon"
+                                        style="width: 15px; height: 15px"
+                                    />
+                                    CSS</span
+                                >
 
-                <span
-                  ><img src="images/figma.png" alt="FIGMA" class="sub-icon" />
-                  FIGMA</span
-                >
-                <span
-                  ><img src="images/java.png" alt="JS" class="sub-icon" /> JAVA
-                  SCRIPT</span
-                >
-              </div>
+                                <span><img src="images/figma.png" alt="FIGMA" class="sub-icon" /> FIGMA</span>
+                                <span><img src="images/javascript.png" alt="JS" class="sub-icon" /> JAVA SCRIPT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Projects (다크 테마) -->
-    <section id="projects" class="projects-section">
-      <h2 class="section-title fade-up">Projects</h2>
+        <!-- Projects (다크 테마) -->
+        <section id="projects" class="projects-section">
+            <h2 class="section-title fade-up">Projects</h2>
 
-      <!-- Project 1 -->
-      <div class="project-item fade-up">
-        <div class="project-info">
-          <h4>AI 애니메이션 <span>01</span></h4>
-          <div class="info-block">
-            <span class="info-label">기획의도</span>
-            <p class="info-text">
-              '수목장림'이라는 장례 문화를 이별의 공간이 아닌, 기억이 이어지는
-              공간으로 재해석한 AI 애니메이션 홍보 영상
-            </p>
-          </div>
-          <div class="info-block">
-            <span class="info-label">담당 역할</span>
-            <p class="info-text">
-              전반부 (0s ~ 39s)<br />스토리보드 구성 및 전체적인 모션 총괄
-            </p>
-          </div>
-          <div class="info-block">
-            <span class="info-label">핵심 키워드</span>
-            <p class="info-text">
-              스토리텔링, AI애니메이션, 장르문화 인식개선, 자연순환, 감성연출
-            </p>
-          </div>
-          <div class="tags">
-            <span class="tag">Chat GPT</span>
-            <span class="tag">Gemini</span>
-            <span class="tag">Kling2.5 AI</span>
-            <span class="tag">Suno AI</span>
-            <span class="tag">Premiere</span>
-            <span class="tag">After Effect</span>
-          </div>
-        </div>
-        <div class="project-image-box">
-          <a
-            href="https://youtu.be/유튜브영상주소"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="video-link"
-          >
-            <img src="images/project img1.png" alt="프로젝트 영상 썸네일" />
+            <!-- Project 1 -->
+            <div class="project-item fade-up">
+                <div class="project-info">
+                    <h4>AI 애니메이션 <span>01</span></h4>
+                    <div class="info-block">
+                        <span class="info-label">기획의도</span>
+                        <p class="info-text">
+                            '수목장림'이라는 장례 문화를 이별의 공간이 아닌, 기억이 이어지는 공간으로 재해석한 AI
+                            애니메이션 홍보 영상
+                        </p>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">담당 역할</span>
+                        <p class="info-text">전반부 (0s ~ 39s)<br />스토리보드 구성 및 전체적인 모션 총괄</p>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">핵심 키워드</span>
+                        <p class="info-text">스토리텔링, AI애니메이션, 장르문화 인식개선, 자연순환, 감성연출</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Chat GPT</span>
+                        <span class="tag">Gemini</span>
+                        <span class="tag">Kling2.5 AI</span>
+                        <span class="tag">Suno AI</span>
+                        <span class="tag">Premiere</span>
+                        <span class="tag">After Effect</span>
+                    </div>
+                </div>
+                <div class="project-image-box">
+                    <a
+                        href="https://youtu.be/유튜브영상주소"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="video-link"
+                    >
+                        <img src="images/project img1.png" alt="프로젝트 영상 썸네일" />
 
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </a>
-        </div>
-      </div>
 
-      <!-- Project 2 -->
-      <div class="project-item reverse fade-up">
-        <div class="project-info">
-          <h4>모션그래픽 <span>02</span></h4>
-          <div class="info-block">
-            <span class="info-label">기획의도</span>
-            <p class="info-text">
-              공연장 에티켓을 쉽고 친근한 캐릭터 기반 콘텐츠로 전달하여 올바른
-              공연 관람 문화를 확산하고자 기획한 인포그래픽 영상
-            </p>
-          </div>
-          <div class="info-block">
-            <span class="info-label">담당 역할</span>
-            <p class="info-text">전 과정 담당(1인 작품)</p>
-          </div>
-          <div class="info-block">
-            <span class="info-label">핵심 키워드</span>
-            <p class="info-text">
-              관람 문화 개선, 캐릭터 애니메이션, 공익 콘텐츠, 정보 전달
-            </p>
-          </div>
-          <div class="tags">
-            <span class="tag">After Effect</span>
-            <span class="tag">Premiere</span>
-            <span class="tag">Illustrator</span>
-            <span class="tag">Chat GPT</span>
-            <span class="tag">Suno AI</span>
-          </div>
-        </div>
-        <div class="project-image-box">
-          <a
-            href="https://youtu.be/유튜브영상주소"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="video-link"
-          >
-            <img src="images/project img2.png" alt="프로젝트 영상 썸네일" />
+            <!-- Project 2 -->
+            <div class="project-item reverse fade-up">
+                <div class="project-info">
+                    <h4>모션그래픽 <span>02</span></h4>
+                    <div class="info-block">
+                        <span class="info-label">기획의도</span>
+                        <p class="info-text">
+                            공연장 에티켓을 쉽고 친근한 캐릭터 기반 콘텐츠로 전달하여 올바른 공연 관람 문화를 확산하고자
+                            기획한 인포그래픽 영상
+                        </p>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">담당 역할</span>
+                        <p class="info-text">전 과정 담당(1인 작품)</p>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">핵심 키워드</span>
+                        <p class="info-text">관람 문화 개선, 캐릭터 애니메이션, 공익 콘텐츠, 정보 전달</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">After Effect</span>
+                        <span class="tag">Premiere</span>
+                        <span class="tag">Illustrator</span>
+                        <span class="tag">Chat GPT</span>
+                        <span class="tag">Suno AI</span>
+                    </div>
+                </div>
+                <div class="project-image-box">
+                    <a
+                        href="https://youtu.be/유튜브영상주소"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="video-link"
+                    >
+                        <img src="images/project img2.png" alt="프로젝트 영상 썸네일" />
 
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </a>
-        </div>
-      </div>
 
-      <!-- Project 3 -->
-      <div class="project-item fade-up">
-        <div class="project-info">
-          <h4>
-            브랜드 홍보영상
-            <span>03</span>
-          </h4>
-          <div class="info-block">
-            <span class="info-label">기획의도</span>
-            <p class="info-text">진행 전</p>
-          </div>
-          <div class="info-block">
-            <span class="info-label">담당 역할</span>
-            <p class="info-text">진행 전</p>
-          </div>
-          <div class="info-block">
-            <span class="info-label">핵심 키워드</span>
-            <p class="info-text">진행 전</p>
-          </div>
-          <div class="tags">
-            <span class="tag">Premiere</span>
-            <span class="tag">After Effect</span>
-            <span class="tag">Kling2.5 AI</span>
-            <span class="tag">Suno AI</span>
-          </div>
-        </div>
-        <div class="project-image-box">
-          <a
-            href="https://youtu.be/유튜브영상주소"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="video-link"
-          >
-            <img src="" alt="프로젝트 영상 썸네일" />
+            <!-- Project 3 -->
+            <div class="project-item fade-up">
+                <div class="project-info">
+                    <h4>
+                        브랜드 홍보영상
+                        <span>03</span>
+                    </h4>
+                    <div class="info-block">
+                        <span class="info-label">기획의도</span>
+                        <p class="info-text">진행 전</p>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">담당 역할</span>
+                        <p class="info-text">진행 전</p>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">핵심 키워드</span>
+                        <p class="info-text">진행 전</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Premiere</span>
+                        <span class="tag">After Effect</span>
+                        <span class="tag">Kling2.5 AI</span>
+                        <span class="tag">Suno AI</span>
+                    </div>
+                </div>
+                <div class="project-image-box">
+                    <a
+                        href="https://youtu.be/유튜브영상주소"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="video-link"
+                    >
+                        <img src="" alt="프로젝트 영상 썸네일" />
 
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </a>
-        </div>
-      </div>
 
-      <!-- Project 4 -->
-      <div class="project-item reverse fade-up">
-        <div class="project-info">
-          <h4>인터뷰 촬영 <span>04</span></h4>
-          <div class="info-block">
-            <span class="info-label">기획의도</span>
-            <p class="info-text">진행 전</p>
-          </div>
-          <div class="info-block">
-            <span class="info-label">담당 역할</span>
-            <p class="info-text">진행 전</p>
-          </div>
-          <div class="info-block">
-            <span class="info-label">핵심 키워드</span>
-            <p class="info-text">진행 전</p>
-          </div>
-          <div class="tags">
-            <span class="tag">After Effect</span>
-            <span class="tag">Premiere</span>
-            <span class="tag">Illustrator</span>
-            <span class="tag">Chat GPT</span>
-            <span class="tag">Suno AI</span>
-          </div>
-        </div>
-        <div class="project-image-box">
-          <a
-            href="https://youtu.be/유튜브영상주소"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="video-link"
-          >
-            <img src="" alt="프로젝트 영상 썸네일" />
+            <!-- Project 4 -->
+            <div class="project-item reverse fade-up">
+                <div class="project-info">
+                    <h4>인터뷰 촬영 <span>04</span></h4>
+                    <div class="info-block">
+                        <span class="info-label">기획의도</span>
+                        <p class="info-text">진행 전</p>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">담당 역할</span>
+                        <p class="info-text">진행 전</p>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">핵심 키워드</span>
+                        <p class="info-text">진행 전</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">After Effect</span>
+                        <span class="tag">Premiere</span>
+                        <span class="tag">Illustrator</span>
+                        <span class="tag">Chat GPT</span>
+                        <span class="tag">Suno AI</span>
+                    </div>
+                </div>
+                <div class="project-image-box">
+                    <a
+                        href="https://youtu.be/유튜브영상주소"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="video-link"
+                    >
+                        <img src="" alt="프로젝트 영상 썸네일" />
 
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </a>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Process -->
-    <section id="process" class="process-section">
-      <h2 class="section-title fade-up" style="color: #000">Process</h2>
+        <!-- Process -->
+        <section id="process" class="process-section">
+            <h2 class="section-title fade-up" style="color: #000">Process</h2>
 
-      <div class="process-block fade-up">
-        <div class="process-title">제작 과정</div>
-        <div class="swiper process-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide slide-item img-slide">
-              <img src="images/story board_1.png" alt="스토리보드" />
+            <div class="process-block fade-up">
+                <div class="process-title">제작 과정</div>
+                <div class="swiper process-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide-item img-slide">
+                            <img src="images/story board_1.png" alt="스토리보드" />
+                        </div>
+                        <div class="swiper-slide slide-item img-slide">
+                            <img src="images/style frame.png" alt="스타일프레임" />
+                        </div>
+                        <div class="swiper-slide slide-item img-slide">
+                            <img src="https://via.placeholder.com/300x200?text=Storyboard+3" alt="과정 이미지" />
+                        </div>
+                        <div class="swiper-slide slide-item img-slide">
+                            <img src="https://via.placeholder.com/300x200?text=Storyboard+4" alt="과정 이미지" />
+                        </div>
+                    </div>
+                </div>
+                <p class="process-desc">
+                    기획 → 레퍼런스 수집 → 무드보드 → 스토리보드 → 스타일 프레임 → 모션 작업 → 편집 작업 → 사운드 작업
+                </p>
             </div>
-            <div class="swiper-slide slide-item img-slide">
-              <img src="images/style frame.png" alt="스타일프레임" />
+
+            <div class="process-block fade-up">
+                <div class="process-title">색상 디자인</div>
+                <div class="swiper process-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide-item">색상 레퍼런스</div>
+                        <div class="swiper-slide slide-item">SWIPER 스크롤 자동으로 넘어감</div>
+                        <div class="swiper-slide slide-item">메인 컬러 설정</div>
+                        <div class="swiper-slide slide-item">최종 색보정</div>
+                    </div>
+                </div>
+                <p class="process-desc">
+                    단순한 시각적 요소가 아닌
+                    <strong>감정과 분위기를 전달하는 언어</strong><br />콘텐츠의 목적과 메시지에 맞는 색채를 선택하고
+                    시청자가 자연스럽게 감정을 받아들일 수 있도록 디자인합니다.
+                </p>
             </div>
-            <div class="swiper-slide slide-item img-slide">
-              <img
-                src="https://via.placeholder.com/300x200?text=Storyboard+3"
-                alt="과정 이미지"
-              />
+
+            <div class="process-block fade-up">
+                <div class="process-title">사운드 구성</div>
+                <div class="swiper process-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide-item">BGM 선정</div>
+                        <div class="swiper-slide slide-item">SWIPER 스크롤 자동으로 넘어감</div>
+                        <div class="swiper-slide slide-item">효과음(SFX) 믹싱</div>
+                        <div class="swiper-slide slide-item">사운드 마스터링</div>
+                    </div>
+                </div>
+                <p class="process-desc">
+                    영상의 완성도를 결정하는 중요한 요소<br />BGM, Dialogue, SFX, Ambience의 균형을 통해
+                    <strong>장면의 감정선을 강화</strong>하고<br />컷의 전환과 움직임에 맞춘 사운드 연출로
+                    <strong>시청자의 몰입도를 높이는 것</strong>을 중요하게 생각합니다.
+                </p>
             </div>
-            <div class="swiper-slide slide-item img-slide">
-              <img
-                src="https://via.placeholder.com/300x200?text=Storyboard+4"
-                alt="과정 이미지"
-              />
+        </section>
+
+        <!-- Playground (다크 테마 & 사각형 이미지) -->
+        <section id="playground" class="playground-section">
+            <h2 class="section-title fade-up">Playground</h2>
+
+            <div class="play-item fade-up">
+                <div class="play-image">
+                    <img src="https://via.placeholder.com/500x300/333/fff?text=Idea+Board" alt="다이어그램 이미지" />
+                </div>
+                <div class="play-text">
+                    <h3>기획 아이디어</h3>
+                    <p>
+                        정보 전달의 목적 뿐만 아니라<br /><strong>시청자가 자연스럽게 공감</strong>하고<br /><strong
+                            >웃음을 짓게 할 수 있는 것이 무엇일까</strong
+                        >를 끊임없이 고민합니다.
+                    </p>
+                </div>
             </div>
-          </div>
-        </div>
-        <p class="process-desc">
-          기획 → 레퍼런스 수집 → 무드보드 → 스토리보드 → 스타일 프레임 → 모션
-          작업 → 편집 작업 → 사운드 작업
-        </p>
-      </div>
 
-      <div class="process-block fade-up">
-        <div class="process-title">색상 디자인</div>
-        <div class="swiper process-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide slide-item">색상 레퍼런스</div>
-            <div class="swiper-slide slide-item">
-              SWIPER 스크롤 자동으로 넘어감
+            <div class="play-item reverse fade-up">
+                <div class="play-image">
+                    <img
+                        src="https://via.placeholder.com/500x300/222/fff?text=Content+Editing"
+                        alt="롱폼 편집 썸네일"
+                    />
+                </div>
+                <div class="play-text">
+                    <h3>콘텐츠 편집</h3>
+                    <p>
+                        긴 영상에도 높은 시청 지속률을 유지하는 콘텐츠를 분석합니다.<br /><strong
+                            >다양한 편집 방식과 연출 기법을 탐구</strong
+                        >하고<br />기존에 있던 숏폼 콘텐츠에 적용해보며<br /><strong>편집 역량을 발전</strong> 시키고
+                        있습니다.
+                    </p>
+                </div>
             </div>
-            <div class="swiper-slide slide-item">메인 컬러 설정</div>
-            <div class="swiper-slide slide-item">최종 색보정</div>
-          </div>
-        </div>
-        <p class="process-desc">
-          단순한 시각적 요소가 아닌
-          <strong>감정과 분위기를 전달하는 언어</strong><br />콘텐츠의 목적과
-          메시지에 맞는 색채를 선택하고 시청자가 자연스럽게 감정을 받아들일 수
-          있도록 디자인합니다.
-        </p>
-      </div>
 
-      <div class="process-block fade-up">
-        <div class="process-title">사운드 구성</div>
-        <div class="swiper process-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide slide-item">BGM 선정</div>
-            <div class="swiper-slide slide-item">
-              SWIPER 스크롤 자동으로 넘어감
+            <div class="play-item fade-up">
+                <div class="play-image vertical">
+                    <img src="images/retinal_cream.png" alt="상세페이지 디자인 이미지" />
+                </div>
+                <div class="play-text">
+                    <h3>상세페이지 디자인</h3>
+                    <p>
+                        포토샵 활용 능력과 <strong>디자인 감각을 꾸준히 발전</strong>시킵니다.<br />정보 구조를
+                        효과적으로 정리하는<br />레이아웃 구성 능력과<br />시선을 끄는 비주얼 디자인을 연구하며<br /><strong
+                            >실무 역량을 확장</strong
+                        >하고 있습니다.
+                    </p>
+                </div>
             </div>
-            <div class="swiper-slide slide-item">효과음(SFX) 믹싱</div>
-            <div class="swiper-slide slide-item">사운드 마스터링</div>
-          </div>
-        </div>
-        <p class="process-desc">
-          영상의 완성도를 결정하는 중요한 요소<br />BGM, Dialogue, SFX,
-          Ambience의 균형을 통해
-          <strong>장면의 감정선을 강화</strong>하고<br />컷의 전환과 움직임에
-          맞춘 사운드 연출로 <strong>시청자의 몰입도를 높이는 것</strong>을
-          중요하게 생각합니다.
-        </p>
-      </div>
-    </section>
+        </section>
 
-    <!-- Playground (다크 테마 & 사각형 이미지) -->
-    <section id="playground" class="playground-section">
-      <h2 class="section-title fade-up">Playground</h2>
+        <!-- Footer (라이트 테마) -->
+        <footer id="contact">
+            <h2>RYUGYEONGSEO</h2>
+            <h3>CONTACT</h3>
+            <p style="font-size: 12px; margin-bottom: 10px; color: #555">이력서 다운로드</p>
 
-      <div class="play-item fade-up">
-        <div class="play-image">
-          <img
-            src="https://via.placeholder.com/500x300/333/fff?text=Idea+Board"
-            alt="기획 아이디어 이미지"
-          />
-        </div>
-        <div class="play-text">
-          <h3>기획 아이디어</h3>
-          <p>
-            정보 전달의 목적 뿐만 아니라<br />시청자가 자연스럽게 공감하고<br />웃음을
-            짓게 할 수 있는 것이 무엇일까를 끊임없이 고민합니다.
-          </p>
-        </div>
-      </div>
+            <a href="#" class="btn-download">
+                DOWNLOAD
+                <img src="images/download.png" alt="다운로드" class="dl-icon" />
+            </a>
 
-      <div class="play-item reverse fade-up">
-        <div class="play-image">
-          <img
-            src="https://via.placeholder.com/500x300/222/fff?text=Content+Editing"
-            alt="콘텐츠 편집 이미지"
-          />
-        </div>
-        <div class="play-text">
-          <h3>콘텐츠 편집</h3>
-          <p>
-            긴 영상에도 높은 시청 지속률을 유지하는 콘텐츠를 분석합니다.<br />다양한
-            편집 방식과 연출 기법을 탐구하고<br />기존에 있던 숏폼 콘텐츠에
-            적용해보며<br />편집 역량을 발전 시키고 있습니다.
-          </p>
-        </div>
-      </div>
+            <div class="social-icons">
+                <a href="#"><img src="images/git.png" alt="Github" class="social-img" /></a>
+                <a href="#"><img src="images/youtube.png" alt="Youtube" class="social-img" /></a>
+                <a href="#"><img src="images/email.png" alt="Email" class="social-img" /></a>
+            </div>
+        </footer>
 
-      <div class="play-item fade-up">
-        <div class="play-image vertical">
-          <img
-            src="https://via.placeholder.com/350x550/444/fff?text=Detail+Page+Design"
-            alt="상세페이지 디자인 이미지"
-          />
-        </div>
-        <div class="play-text">
-          <h3>상세페이지 디자인</h3>
-          <p>
-            포토샵 활용 능력과 디자인 감각을 꾸준히 발전시킵니다.<br />정보
-            구조를 효과적으로 정리하는<br />레이아웃 구성 능력과<br />시선을
-            끄는 비주얼 디자인을 연구하며<br />실무 역량을 확장하고 있습니다.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer (라이트 테마) -->
-    <footer id="contact">
-      <h2>RYUGYEONGSEO</h2>
-      <h3>CONTACT</h3>
-      <p style="font-size: 12px; margin-bottom: 10px; color: #555">
-        이력서 다운로드
-      </p>
-
-      <a href="#" class="btn-download">
-        DOWNLOAD
-        <img src="images/download.png" alt="다운로드" class="dl-icon" />
-      </a>
-
-      <div class="social-icons">
-        <a href="#"
-          ><img src="images/git.png" alt="Github" class="social-img"
-        /></a>
-        <a href="#"
-          ><img src="images/youtube.png" alt="Youtube" class="social-img"
-        /></a>
-        <a href="#"
-          ><img src="images/email.png" alt="Email" class="social-img"
-        /></a>
-      </div>
-    </footer>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- 외부 JavaScript 파일 연결 -->
-    <script src="script.js"></script>
-  </body>
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- 외부 JavaScript 파일 연결 -->
+        <script src="script.js"></script>
+    </body>
 </html>

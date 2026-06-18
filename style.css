@@ -15,6 +15,7 @@
 }
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
 }
 body {
     background-color: #ffffff;
@@ -62,7 +63,7 @@ header {
     font-weight: 900;
     letter-spacing: -0.5px;
 }
-.logo img{
+.logo img {
     height: 35px;
     width: auto;
     display: block;
@@ -74,7 +75,7 @@ nav ul {
     font-size: 18px;
 }
 nav ul li a:hover {
-    color: #666;
+    color: #333;
     transition: color 0.3s;
 }
 
@@ -303,7 +304,7 @@ nav ul li a:hover {
 .project-item {
     display: flex;
     gap: 50px;
-    margin-bottom: 120px;
+    margin-bottom: 200px;
     align-items: center;
 }
 .project-item.reverse {
@@ -325,12 +326,12 @@ nav ul li a:hover {
     font-size: 40px;
     font-weight: 900;
 }
-.project-info h3{
+.project-info h3 {
     font-size: 20px;
     margin-bottom: 30px;
     font-weight: 100;
 }
-.project-right-wrap{
+.project-right-wrap {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -356,13 +357,13 @@ nav ul li a:hover {
 }
 .tags {
     display: grid;
-    grid-template-columns: repeat(3,auto);
+    grid-template-columns: repeat(3, auto);
     gap: 8px;
     justify-content: end;
     gap: 8px;
     margin-top: 20px;
 }
-.reverse .tags{
+.reverse .tags {
     justify-content: start;
 }
 .tag {
@@ -381,7 +382,7 @@ nav ul li a:hover {
     border-radius: 8px;
     overflow: hidden;
 }
-.project-image-box img{
+.project-image-box img {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -436,8 +437,8 @@ nav ul li a:hover {
 .play-icon {
     width: 64px;
     height: 64px;
-    margin-bottom: 80px;
-    background: rgba(255, 255, 255, 0.9);
+    /* margin-bottom: ; */
+    background: rgba(255, 255, 255, 0.7);
     color: #111;
     border-radius: 50%;
     display: flex;
@@ -463,20 +464,64 @@ nav ul li a:hover {
     transform: scale(1.02); /* 썸네일 이미지가 미세하게 확대됨 */
 }
 
-
 /* Process Section */
 .process-section {
     background-color: #fff;
     padding: 100px 10%;
+    position: relative;
+}
+/* 네비게이션을 담는 보이지 않는 긴 통 (섹션 전체 높이를 차지함) */
+.process-nav-container {
+    position: absolute;
+    top: 0;
+    right: 40px; /* 화면 오른쪽에서 40px 띄움 */
+    height: 100%; /* 섹션 끝날 때까지만 존재함 */
+    z-index: 100;
+    pointer-events: none; /* 겹치는 영역 클릭 방해 금지 */
+}
+
+/* 실제 스크롤을 따라다니는 버튼 그룹 */
+.process-nav {
+    position: sticky;
+    top: 50vh; /* 항상 화면 세로 정중앙에 위치 */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 동그라미 사이의 간격 */
+    pointer-events: auto; /* 버튼은 클릭할 수 있게 설정 */
+}
+
+/* 개별 동그라미 스타일 */
+.process-nav .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc; /* 기본 색상 (연한 회색) */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* 마우스를 올리거나 현재 보고 있는 화면의 동그라미 색상 */
+.process-nav .dot:hover,
+.process-nav .dot.active {
+    background-color: #131313; /* 강조 색상 (진한 회색/검정) */
+    transform: scale(1.4); /* 살짝 커지는 효과 */
 }
 .process-block {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: center;
+    box-sizing: border-box;
     margin-bottom: 80px;
 }
 .process-title {
     text-align: center;
     font-weight: bold;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 22px;
 }
 .process-swiper {
     width: 100%;
@@ -514,10 +559,11 @@ nav ul li a:hover {
     background-color: #ccc;
     color: #111;
     font-weight: bold;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); */
     z-index: 10;
 }
 .process-desc {
+    margin-bottom: 15px;
     text-align: center;
     margin-top: 20px;
     font-size: 16px;
@@ -575,7 +621,7 @@ nav ul li a:hover {
 
 /* Footer (라이트 테마) */
 footer {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     color: #111;
     text-align: center;
     padding: 60px 20px;
@@ -587,9 +633,9 @@ footer h2 {
     font-weight: 900;
 }
 footer h3 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 30px;
-    -webkit-text-stroke: 1px #000;
+    -webkit-text-stroke: 1px #000000;
     color: transparent;
     letter-spacing: 2px;
 }
@@ -610,18 +656,20 @@ footer h3 {
         background 0.3s,
         color 0.3s;
 }
+/* 다운로드 버튼 안의 아이콘 크기 조절 */
+.btn-download img {
+    height: 20px;
+    width: auto; /* 비율 유지 */
+    /* margin-left: 5px; */
+    vertical-align: middle;
+    transition: filter 0.3s ease;
+}
 .btn-download:hover {
     background: #111;
     color: #fff;
 }
-/* 다운로드 아이콘 이미지 크기 제어 */
-.dl-icon {
-    width: 15px;
-    height: 15px;
-    object-fit: contain;
-}
 /* 다운로드 버튼에 마우스를 올렸을 때(hover) 내부 아이콘 하얗게 반전시키기 */
-.btn-download:hover .dl-icon {
+.btn-download:hover img {
     filter: brightness(0) invert(1);
 }
 .social-icons {
@@ -639,7 +687,7 @@ footer h3 {
 
 /* 마우스 올렸을 때 아이콘이 살짝 커지는 애니메이션 */
 .social-img:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
 /* 반응형 처리 */
@@ -658,4 +706,63 @@ footer h3 {
     .play-image.vertical {
         max-width: 100%;
     }
+}
+/* 썸네일에 마우스를 올렸을 때 클릭할 수 있다는 표시(손가락) 추가 */
+.video-trigger {
+    cursor: pointer;
+}
+
+/* 팝업창 전체 화면 덮개 */
+.video-modal {
+    display: none; /* 평소에는 숨겨둡니다 */
+    position: fixed;
+    z-index: 9999; /* 화면 맨 앞으로 가져오기 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* 반투명한 검은색 배경 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+}
+
+/* 팝업창 내부 크기 제한 */
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* X 닫기 버튼 */
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.close-modal:hover {
+    color: #ccc;
+}
+
+/* 유튜브 영상 16:9 비율 완벽 유지 */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 비율을 만드는 수치입니다 */
+    height: 0;
+}
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
 }

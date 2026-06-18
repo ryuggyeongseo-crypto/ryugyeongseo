@@ -111,3 +111,67 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const triggers = document.querySelectorAll(".video-trigger");
+    const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("youtubeIframe");
+    const closeBtn = document.querySelector(".close-modal");
+
+    // 1. 썸네일 클릭 시 팝업 열고 자동 재생
+    triggers.forEach(function (trigger) {
+        trigger.addEventListener("click", function () {
+            const videoId = this.getAttribute("data-video-id");
+            // autoplay=1을 붙여서 창이 열리면 바로 재생되게 만듭니다
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.style.display = "flex";
+        });
+    });
+
+    // 2. 팝업 닫기 및 영상 정지 함수
+    function closeModal() {
+        modal.style.display = "none";
+        iframe.src = ""; // src를 비워주면 영상이 즉시 정지됩니다
+    }
+
+    // 3. X 버튼이나 검은 배경을 누르면 창 닫기
+    closeBtn.addEventListener("click", closeModal);
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const processBlocks = document.querySelectorAll(".process-block");
+    const navDots = document.querySelectorAll(".process-nav .dot");
+
+    if (processBlocks.length === 0 || navDots.length === 0) return;
+
+    // 화면에 50% 이상 보일 때 해당 섹션으로 인식하도록 설정
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // 1. 화면에 들어온 블록의 id를 가져옴 (예: step1)
+                const currentId = entry.target.getAttribute("id");
+
+                // 2. 모든 동그라미에서 active 클래스를 제거
+                navDots.forEach((dot) => dot.classList.remove("active"));
+
+                // 3. 현재 id와 일치하는 동그라미에만 active 클래스 추가 (색상 진하게)
+                const activeDot = document.querySelector(`.process-nav .dot[href="#${currentId}"]`);
+                if (activeDot) {
+                    activeDot.classList.add("active");
+                }
+            }
+        });
+    }, observerOptions);
+
+    // 모든 프로세스 블록을 감시하도록 설정
+    processBlocks.forEach((block) => observer.observe(block));
+});

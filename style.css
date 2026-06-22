@@ -1,9 +1,10 @@
 /* 기본 설정 */
+@import url("https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:
+    /* font-family:
         "Pretendard",
         -apple-system,
         BlinkMacSystemFont,
@@ -11,7 +12,7 @@
         Roboto,
         "Helvetica Neue",
         Arial,
-        sans-serif;
+        sans-serif; */
 }
 html {
     scroll-behavior: smooth;
@@ -21,6 +22,16 @@ body {
     background-color: #ffffff;
     color: #111;
     overflow-x: hidden;
+    font-family: "SUIT", sans-serif;
+}
+/* 2. 로고, 메뉴, 영문 타이틀, 숫자 등에는 포인트로 'Raleway'를 적용합니다 */
+/* 아래 클래스 이름들은 기존 코드에 추가하시거나, 빈 공간에 복사해 넣으시면 됩니다 */
+.logo-text, 
+.header-container nav ul li a, /* 상단 메뉴 (About, Project 등) */
+.section-title,                /* 각 섹션 큰 제목 (Projects, Process 등) */
+.btn-download,                 /* 다운로드 버튼 글씨 */
+.project-info h4 span          /* 프로젝트 넘버링 (01, 02 등) */ {
+    font-family: "Raleway", sans-serif;
 }
 a {
     text-decoration: none;
@@ -58,15 +69,57 @@ header {
     background-color: rgba(255, 255, 255, 0.95);
     z-index: 1000;
 }
+/* 1. 로고 전체 틀 (세로로 배치) */
 .logo {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: flex-start; /* 왼쪽 정렬 (가운데 정렬을 원하면 center로 변경) */
+    text-decoration: none;
+    color: #111; /* 글자색 */
+    gap: 0; /* 토끼와 글자 사이 간격 최소화 */
+}
+
+/* 2. 글자 스타일 */
+.logo-text {
     font-size: 24px;
     font-weight: 900;
-    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 2; /* 토끼보다 항상 앞에 있도록 설정 */
 }
-.logo img {
-    height: 35px;
+
+.rabbit-mask {
+    height: 35px; /* 토끼가 완전히 올라왔을 때 보여줄 높이 (이미지에 맞게 조절하세요!) */
+    overflow: hidden; /* 이 상자 크기를 벗어난 부분은 투명하게 숨김 */
+    display: flex;
+    align-items: flex-end; /* 토끼가 상자 바닥에서 출발하도록 설정 */
+
+    /* 글자 왼쪽 시작점과 토끼 위치를 맞추고 싶다면 마진으로 조절 */
+    margin-left: 5px;
+}
+
+/* 4. 토끼 이미지 & 애니메이션 설정 */
+.rabbit-mask img {
+    height: 100%; /* 마스크 상자 높이에 딱 맞춤 */
     width: auto;
-    display: block;
+
+    /* 처음에 100% (자신의 키만큼) 아래로 내려가서 상자 밖으로 숨어있음 */
+    transform: translateY(100%);
+
+    /* 빼꼼 올라오는 애니메이션 실행 (1초 동안, 부드럽게) */
+    animation: peekaboo 0.7s ease-out forwards;
+
+    /* 웹페이지가 켜지고 0.5초 뒤에 토끼가 올라옵니다 */
+    animation-delay: 0.5s;
+}
+
+/* 5. 위로 올라오는 움직임(키프레임) 정의 */
+@keyframes peekaboo {
+    0% {
+        transform: translateY(100%); /* 숨어있는 상태 */
+    }
+    100% {
+        transform: translateY(0); /* 원래 자리로 올라온 상태 */
+    }
 }
 nav ul {
     display: flex;
@@ -493,8 +546,8 @@ nav ul li a:hover {
 
 /* 개별 동그라미 스타일 */
 .process-nav .dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background-color: #ccc; /* 기본 색상 (연한 회색) */
     border-radius: 50%;
     transition: all 0.3s ease;
@@ -506,7 +559,7 @@ nav ul li a:hover {
 .process-nav .dot:hover,
 .process-nav .dot.active {
     background-color: #131313; /* 강조 색상 (진한 회색/검정) */
-    transform: scale(1.4); /* 살짝 커지는 효과 */
+    transform: scale(1.2); /* 살짝 커지는 효과 */
 }
 .process-block {
     height: 100vh;
@@ -535,7 +588,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 16px;
     color: #888;
     transition: all 0.5s ease;
     opacity: 0.5;
@@ -627,18 +680,18 @@ footer {
     padding: 60px 20px;
 }
 footer h2 {
-    font-size: 22px;
-    margin-bottom: 5px;
+    font-size: 40px;
+    margin-bottom: 10px;
     letter-spacing: 1px;
     font-weight: 900;
 }
-footer h3 {
+/* footer h3 {
     font-size: 18px;
     margin-bottom: 30px;
     -webkit-text-stroke: 1px #000000;
     color: transparent;
     letter-spacing: 2px;
-}
+} */
 .btn-download {
     display: inline-flex; /* 텍스트와 이미지를 나란히 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
@@ -765,4 +818,44 @@ footer h3 {
     width: 100%;
     height: 100%;
     border-radius: 8px;
+}
+/* 1. 타이틀 감싸는 상자 (토끼 배치의 기준점) */
+.contact-title-box {
+    position: relative;
+    display: inline-block; /* 글자 크기만큼만 영역을 잡도록 설정 */
+    margin: 0 auto 10px auto; /* 가운데 정렬 및 아래쪽 여백 유지 */
+    z-index: 1;
+}
+
+/* h2 태그 자체의 여백을 없애서 박스에 딱 맞게 해줍니다 */
+.contact-title-box h2 {
+    margin: 0;
+}
+
+/* 2. 토끼 마스크 (C 글자 왼쪽 위 대각선 배치) */
+.contact-rabbit-mask {
+    position: absolute;
+    /* 👇 폰트 크기에 따라 위치가 다를 수 있으니 숫자를 조금씩 바꿔가며 맞춰보세요! */
+    top: -30px;
+    left: -20px;
+
+    width: 35px; /* 토끼 가로 크기 */
+    height: 40px; /* 토끼 세로(올라올 수 있는 한계선) 크기 */
+    overflow: hidden; /* 상자 밖으로 나간 토끼는 자름 */
+    z-index: -1; /* 글자 뒤에서 올라오도록 뒤로 보냄 */
+}
+
+/* 3. 토끼 이미지 기본 상태 (아래로 숨기기) */
+.contact-rabbit-mask img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: rotate(-250deg) translateY(150%); /* 100% 아래로 내려서 안 보이게 숨김 */
+    transition: transform 0.4s ease-out; /* 부드럽게 스르륵 올라오는 속도 */
+}
+
+/* 4. 마법의 호버 연결고리! 
+   id가 contact인 영역 안에서 다운로드 버튼(.btn-download)에 마우스를 올리면 토끼가 올라옵니다 */
+#contact:has(.btn-download:hover) .contact-rabbit-mask img {
+    transform: rotate(-250deg) translateY(0); /* 원래 자리로 복귀 (까꿍!) */
 }

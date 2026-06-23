@@ -634,7 +634,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 80px;
     margin-bottom: 100px;
 }
 .play-item.reverse {

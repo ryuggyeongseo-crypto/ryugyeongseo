@@ -175,3 +175,28 @@ document.addEventListener("DOMContentLoaded", function () {
     // 모든 프로세스 블록을 감시하도록 설정
     processBlocks.forEach((block) => observer.observe(block));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("detailModal");
+    const triggerImg = document.querySelector(".modal-trigger");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // 이미지를 클릭하면 모달 열기 (display: flex로 변경하여 중앙 정렬 활성화)
+    triggerImg.addEventListener("click", () => {
+        modal.style.display = "flex";
+        // 모달 열릴 때마다 스크롤을 맨 위로 초기화
+        modal.querySelector(".modal-content").scrollTop = 0;
+    });
+
+    // 닫기(X) 버튼을 누르면 모달 닫기
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // 모달창 밖의 어두운 배경을 클릭해도 닫히게 만들기
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});

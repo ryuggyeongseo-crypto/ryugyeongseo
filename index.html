@@ -497,10 +497,7 @@
 
             <div class="play-item reverse fade-up">
                 <div class="play-image">
-                    <img
-                        src="images/playground_edit.png"
-                        alt="롱폼 편집 썸네일"
-                    />
+                    <img src="images/playground_edit.png" alt="롱폼 편집 썸네일" />
                 </div>
                 <div class="play-text">
                     <h3>콘텐츠 편집</h3>
@@ -513,7 +510,12 @@
 
             <div class="play-item fade-up">
                 <div class="play-image vertical">
-                    <img src="images/retinal_cream.png" alt="상세페이지 디자인 이미지" />
+                    <img
+                        src="images/retinal_cream.png"
+                        alt="상세페이지 디자인 이미지"
+                        class="modal-trigger"
+                        style="cursor: pointer"
+                    />
                 </div>
                 <div class="play-text">
                     <h3>상세페이지 디자인</h3>
@@ -538,7 +540,7 @@
             <p style="font-size: 12px; margin-bottom: 10px; color: #555">이력서 다운로드</p>
 
             <a href="files/ryugyeongseo_resume.pdf" download="류경서_이력서.pdf" class="btn-download">
-                DOWNLOAD <img src="images/download.png" alt="아이콘" />
+                DOWNLOAD <img src="images/download_2.png" alt="아이콘" />
             </a>
 
             <div class="social-icons">
@@ -563,6 +565,45 @@
                         allow="autoplay; encrypted-media"
                         allowfullscreen
                     ></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="detailModal" class="modal-overlay">
+            <span class="close-btn">&times;</span>
+            <div class="modal-content">
+                <!-- 닫기 버튼 -->
+
+                <!-- 모달 상단 텍스트 영역 -->
+                <div class="modal-header">
+                    <h3>[더마팩토리] 레티날 1000PPM 크림</h3>
+
+                    <ul class="project-info-list">
+                        <li>
+                            <strong>제작 목적</strong>
+                            <span
+                                >장식적인 요소를 배제한 미니멀한 에디토리얼 디자인을 통해, 고함량 레티날 제품의 효능과
+                                성분 본질에 집중할 수 있도록 직관적이고 신뢰감 있는 상세페이지로 리디자인
+                                했습니다.</span
+                            >
+                        </li>
+                        <li>
+                            <strong>키포인트</strong>
+                            <span
+                                >레티날 성분 특유의 '노란빛 제형'이 직관적으로 돋보일 수 있도록 고해상도 텍스처 컷과
+                                색감을 보정하였습니다.</span
+                            >
+                        </li>
+                        <li>
+                            <strong>사용 툴</strong>
+                            <span>Photoshop, Illustrator, Chat GPT, Gemini, Adobe Firefly</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 모달 하단 긴 이미지 영역 -->
+                <div class="modal-body">
+                    <!-- 💡 여기에 전체 길이가 긴 상세페이지 원본 이미지를 넣어주세요 -->
+                    <img src="images/modal_retinal.png" alt="상세페이지 풀버전" />
                 </div>
             </div>
         </div>
